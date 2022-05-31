@@ -1,14 +1,26 @@
 <template>
   <div>
-    <div class="bg-red-300">A</div>
+    <Preset/>
+
+
+
+
+
+
+
   </div>
 </template>
 
 <script>
+import Header from "../components/header"
+import Preset from "../components/preset";
+  export default {
+    components: {
+      Header,
+      Preset
+    },
+  }
 
-export default {
-
-}
 </script>
 
 <style>

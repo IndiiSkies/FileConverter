@@ -1,62 +1,56 @@
 <template>
-  <header class="main-header">
-    <nav>
-      <div>
-        <nuxt-link
-          to="/"
-          exact
-        >
-          System info
-        </nuxt-link>
+       <!--
+  This example requires Tailwind CSS v2.0+ 
+  
+  This example requires some changes to your config:
+  
+  ```
+  // tailwind.config.js
+  module.exports = {
+    // ...
+    plugins: [
+      // ...
+      require('@tailwindcss/forms'),
+    ],
+  }
+  ```
+-->
+    <div class="flex justify-">
+      <div class="sm:hidden">
+        <label for="tabs" class="sr-only">Select a tab</label>
+        <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
+        <select id="tabs" name="tabs"
+          class="block w-full focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
+          <option>Conversion Presets</option>
+
+          <option>Application</option>
+
+          <option selected>About</option>
+        </select>
       </div>
-      <div>
-        <nuxt-link
-          to="/other"
-          exact
-        >
-          Next page
-        </nuxt-link>
+      <div class="hidden sm:block">
+        <nav class="flex border rounded space-x-4" aria-label="Tabs">
+          <!-- Current: "bg-gray-100 text-gray-700", Default: "text-gray-500 hover:text-gray-700" -->
+          <a href="#" class="text-gray-500 hover:text-gray-700 px-3 py-2 font-medium text-sm rounded-md">Conversion
+            Presets</a>
+
+          <a href="#" class="text-gray-500 hover:text-gray-700 px-3 py-2 font-medium text-sm rounded-md">Application</a>
+
+          <a href="#" class="bg-gray-100 text-gray-700 px-3 py-2 font-medium text-sm rounded-md"
+            aria-current="page">About</a>
+
+        </nav>
+        <!--<ConvPreset/>-->
       </div>
-    </nav>
-  </header>
+    </div>
 </template>
 
 <script>
 export default {
-  name: 'HeaderComponent'
+
 }
 </script>
 
-<style scoped>
-    .main-header {
-        height: 50px;
-        display: flex;
-        background-color: #364758;
-    }
+<style>
 
-    nav{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    nav div{
-        height: 100%;
-        margin: 0 20px;
-        display: flex;
-        align-items: center;
-    }
-
-    a {
-        font-family: Helvetica, sans-serif;
-        color: white;
-        font-size: 1rem;
-        font-weight: 100;
-        text-decoration: underline;
-        text-transform: uppercase;
-    }
-
-    a:hover{
-        opacity: 0.9;
-    }
 </style>
